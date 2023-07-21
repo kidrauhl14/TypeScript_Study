@@ -5,7 +5,19 @@
   text-align: center;
 }
 
-.logo {
+/*App컴포넌트(React에서 컴포넌트는 함수로 정의될 수도 있고 클래스로 정의될 수도)*/
+.App { 
+  text-align: center;
+  font-family: "Jalnan";
+}
+
+@font-face {
+  font-family: "Jalnan";
+  src: url(/src/assets/fonts/Jalnan.ttf);
+}
+
+
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -39,4 +51,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
