@@ -1,0 +1,3 @@
+[submodule "mbtitest/mbtitest"]
+	path = mbtitest/mbtitest
+	url = https://github.com/kidrauhl14/mbtitest.git
