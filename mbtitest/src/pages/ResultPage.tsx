@@ -26,7 +26,7 @@ const ResultPage = () => {
       <Header>예비집사 판별기</Header>
       <ContentsWrapper>
         <Title>결과 : {resultData.best}</Title>
-        <LogoImage>
+        <ResultImage>
           <img
             src={resultData.image}
             className="rounded-circle"
@@ -34,11 +34,11 @@ const ResultPage = () => {
             height={350}
             alt="고양이 로고"
           />
-        </LogoImage>
-        <Desc>
+        </ResultImage>
+        <Description>
           예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다. <br />{' '}
           {resultData.desc}
-        </Desc>
+        </Description>
         <ButtonGroup>
           <Button
             style={{ fontFamily: 'Jalnan' }}
@@ -86,4 +86,8 @@ const ResultImage = styled.div`
 const Description = styled.div`
   font-size: 20pt;
   font-family: 'Jalnan';
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
 `;
