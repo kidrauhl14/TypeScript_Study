@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 import {Button} from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
-
+import Header from '../components/Header';
 
 import DoraemonImg from "../assets/DoraemonImg.jpg";
 
@@ -18,7 +18,7 @@ function MainPage(): React.ReactElement {
   return (
     <>
       <Wrapper>
-        <Header>🐱예비집사 판별기🐱</Header>
+        <Header type="title" questionNo={0}/>
         <ContentsWrapper>
           <Title>나에게 맞는 주인님은?</Title>
           <LogoImage>
@@ -51,14 +51,14 @@ const Wrapper = styled.div`
     height: 100vh;
 `;
 
-const Header = styled.div`
-    background: #ffa07a;
-    font-size: 40pt;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-family: "Jalnan";
-`;
+// const Header = styled.div`
+//     background: #ffa07a;
+//     font-size: 40pt;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//     font-family: "Jalnan";
+// `;
 
 const ContentsWrapper = styled.div`
     align-items: center;
@@ -69,8 +69,9 @@ const ContentsWrapper = styled.div`
 `;
 
 const Title = styled.div`
-    margin-top: 20px;
-    font-size: 20pt;
+  margin-top: 20px;
+  font-size: 20pt;
+  font-family: 'Jalnan';
 `;
 
 const LogoImage = styled.div`
@@ -81,5 +82,6 @@ const LogoImage = styled.div`
 `;
 
 const Description = styled.div`
-    font-size: 20pt;
+  font-size: 20pt;
+  font-family: 'Jalnan';
 `;
