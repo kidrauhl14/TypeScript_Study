@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Button} from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 
 import { QuestionData } from '../stores/Question/QuestionData';
 
@@ -28,12 +28,26 @@ function QuestionPage(): React.ReactElement {
     setTotalScore(newScore);
 
     // 마지막 문제가 아닐 경우
-    if(QuestionData.length !== questionNo + 1){
-        setQuestionNo(questionNo + 1);
+    if (QuestionData.length !== questionNo + 1) {
+      setQuestionNo(questionNo + 1);
     }
     //마지막 문제일 경우
     else {
-      navigate('/result');
+      //mbti도출
+      const mbti = newScore.reduce(
+        (acc, curr) =>
+          acc +
+          (curr.score >= 2 ? curr.id.substring(0, 1) : curr.id.substring(1, 2)),
+        '',
+      );
+      console.log('mbti' + mbti);
+      //결과 페이지로 이동
+      navigate({
+        pathname: '/result',
+        search: `?${createSearchParams({
+          mbti: mbti,
+        })}`,
+      });
     }
 
   // if(type === "EI"){
