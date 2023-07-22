@@ -24,7 +24,7 @@ function Header(props:Props) {
           />
         </ProgressWrapper>
       ) : (
-        <div style={{ backgroundColor: '#ffa07a' }}>🐱예비집사 판별기🐱</div>
+        <div style={{ backgroundColor: '#ffa07a', fontFamily: 'Jalnan' }}>🐱예비집사 판별기🐱</div>
       )}
     </div>
   );
