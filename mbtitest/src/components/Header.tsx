@@ -24,7 +24,17 @@ function Header(props:Props) {
           />
         </ProgressWrapper>
       ) : (
-        <div style={{ backgroundColor: '#ffa07a', fontFamily: 'Jalnan' }}>🐱예비집사 판별기🐱</div>
+        <div
+          style={{
+            backgroundColor: '#ffa07a',
+            fontFamily: 'Jalnan',
+            fontSize: '45pt',
+            width: '1200px',
+            height: '100px',
+          }}
+        >
+          🐱예비집사 판별기🐱
+        </div>
       )}
     </div>
   );
