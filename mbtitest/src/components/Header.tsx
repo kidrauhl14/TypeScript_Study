@@ -12,17 +12,17 @@ function Header(props:Props) {
   return (
     <div>
       {props.type == 'progress' ? (
-        <ProgressWrapper>
+        // <ProgressWrapper>
           <ProgressBar
             striped
-            variant="danger"
+            variant="info"
             now={Math.round((props.questionNo / QuestionData.length) * 100)}
             label={`${Math.round(
               (props.questionNo / QuestionData.length) * 100,
             )}%`}
             style={{ width: '100%', height: '30px' }}
           />
-        </ProgressWrapper>
+        // </ProgressWrapper>
       ) : (
         <div
           style={{
@@ -43,12 +43,12 @@ function Header(props:Props) {
 export default Header;
 
 // 위에 Header함수와 겹쳐서, Header대신 Wrapper라고 칭함
-const ProgressWrapper = styled.div`
-  background: #ffa07a;
-  font-size: 40pt;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  font-family: 'Jalnan';
-  padding: 20px 20px 20px 20px;
-`;
+// const ProgressWrapper = styled.div`
+//   background: #ffa07a;
+//   font-size: 40pt;
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+//   font-family: 'Jalnan';
+//   padding: 20px 20px 20px 20px;
+// `;

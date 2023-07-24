@@ -5,25 +5,33 @@ import { Button } from 'react-bootstrap';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { ResultData } from '../stores/Result/ResultData';
+import { IResult } from '../stores/Result/types';
+
 import Header from '../components/Header';
+import KakaoShareButton from '../components/KakaoShareButton';
 
-import DoraemonImg from '../assets/DoraemonImg.jpg';
 
-
-const ResultPage = () => {
+function ResultPage(): React.ReactElement {
+  const [searchParmas] = useSearchParams();
+  const mbti = searchParmas.get('mbti'); // 예비집사의 MBTI
+  const testResult: IResult = ResultData.find(
+    (cat: IResult) => cat.best === mbti,
+  ) ?? {
+    id: 0,
+    name: '',
+    best: '',
+    desc: '',
+    image: '',
+    mbti: '',
+  }; // 잘맞는 고양이
+  const friendCat = ResultData.find(
+    (friend) => friend.best === testResult?.mbti,
+  ); // 고양이와 잘맞는 형제묘
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const mbti = searchParams.get('mbti');
-  const [resultData, setResultData] = React.useState({});
 
-  React.useEffect(() => {
-    const result = ResultData.find((s) => s.best === mbti);
-    setResultData(result);
-  }, [mbti]);
-  console.log(resultData);
   return (
     <Wrapper>
-      <Header>예비집사 판별기</Header>
+      <Header type="title" questionNo={0} />
       <ContentsWrapper>
         <Title>결과 : {resultData.best}</Title>
         <ResultImage>
@@ -39,13 +47,20 @@ const ResultPage = () => {
           예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다. <br />{' '}
           {resultData.desc}
         </Description>
-        <ButtonGroup>
+        <ButtonGroup style={{ marginBottom: 30 }}>
           <Button
-            style={{ fontFamily: 'Jalnan' }}
+            className="btn-danger"
+            style={{
+              width: 170,
+              marginTop: 20,
+              marginRight: 20,
+              fontFamily: 'Jalnan',
+            }}
             onClick={() => navigate('/')}
           >
             테스트 다시하기
           </Button>
+          <KakaoShareButton data={testResult} />
         </ButtonGroup>
       </ContentsWrapper>
     </Wrapper>

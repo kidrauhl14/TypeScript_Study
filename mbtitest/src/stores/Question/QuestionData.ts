@@ -1,13 +1,6 @@
 import { IQuestion } from "./types";
 
 export const QuestionData: IQuestion[] = [
-  //   {
-  //     id: 1,
-  //     title: '질문1',
-  //     answera: '답변a',
-  //     answerb: '답변b',
-  //     type: 'EI',
-  //   },
   {
     id: 1,
     title: '새로운 고양이를 데려왔다! 나의 반응은?',

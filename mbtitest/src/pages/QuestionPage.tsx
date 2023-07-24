@@ -95,9 +95,9 @@ function QuestionPage(): React.ReactElement {
   // }
 };
 
-React.useEffect(() => {
-  console.log("totalScore", totalScore[0].score);
-}, [totalScore[0].score]);
+// React.useEffect(() => {
+//   console.log("totalScore", totalScore[0].score);
+// }, [totalScore[0].score]);
 
 //코드가 중복되니까 A,B로 나누지 말고 하나의 함수(handleClickAnswer)로 만들었다.
   // const handleClickAnswerA = (no:number) => {
@@ -127,7 +127,7 @@ React.useEffect(() => {
               fontSize: '15pt',
             }}
             onClick={() =>
-              handleClickAnswer('a', QuestionData[questionNo].type)
+              handleClickAnswer('1', QuestionData[questionNo].type)
             }
           >
             {QuestionData[questionNo].answera}
@@ -141,7 +141,7 @@ React.useEffect(() => {
               fontSize: '15pt',
             }}
             onClick={() =>
-              handleClickAnswer('b', QuestionData[questionNo].type)
+              handleClickAnswer('0', QuestionData[questionNo].type)
             }
           >
             {QuestionData[questionNo].answerb}
