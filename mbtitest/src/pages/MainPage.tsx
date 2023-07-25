@@ -33,7 +33,7 @@ function MainPage(): React.ReactElement {
             MBTI를 기반으로 하는 나랑 잘맞는 고양이 찾기
           </Description>
           <Description>내가 집사가 돼서 고양이를 키운다면?</Description>
-          <Button className="btn-danger" onClick={handleClickButton} style={{fontSize:25, marginTop: 20, marginBottom: 20}}>
+          <Button className="btn-danger" onClick={handleClickButton} style={{fontSize:25, marginTop: 20, marginBottom: 20, fontFamily: 'Jalnan'}}>
             테스트 시작하기
           </Button>
         </ContentsWrapper>

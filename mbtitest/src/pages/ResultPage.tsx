@@ -12,8 +12,8 @@ import KakaoShareButton from '../components/KakaoShareButton';
 
 
 function ResultPage(): React.ReactElement {
-  const [searchParmas] = useSearchParams();
-  const mbti = searchParmas.get('mbti'); // 예비집사의 MBTI
+  const [searchParams] = useSearchParams();
+  const mbti = searchParams.get('mbti'); // 예비집사의 MBTI
   const testResult: IResult = ResultData.find(
     (cat: IResult) => cat.best === mbti,
   ) ?? {
@@ -33,10 +33,10 @@ function ResultPage(): React.ReactElement {
     <Wrapper>
       <Header type="title" questionNo={0} />
       <ContentsWrapper>
-        <Title>결과 : {resultData.best}</Title>
+        <Title>결과 : {testResult.best}</Title>
         <ResultImage>
           <img
-            src={resultData.image}
+            src={testResult.image}
             className="rounded-circle"
             width={350}
             height={350}
@@ -44,8 +44,8 @@ function ResultPage(): React.ReactElement {
           />
         </ResultImage>
         <Description>
-          예비 집사님과 찰떡궁합인 고양이는 {resultData.name}입니다. <br />{' '}
-          {resultData.desc}
+          예비 집사님과 찰떡궁합인 고양이는 {testResult.name}입니다. <br />{' '}
+          {testResult.desc}
         </Description>
         <ButtonGroup style={{ marginBottom: 30 }}>
           <Button

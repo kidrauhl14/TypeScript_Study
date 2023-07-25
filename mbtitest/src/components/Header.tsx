@@ -29,7 +29,7 @@ function Header(props:Props) {
             backgroundColor: '#ffa07a',
             fontFamily: 'Jalnan',
             fontSize: '45pt',
-            width: '1200px',
+            // width: '1200px',
             height: '100px',
           }}
         >

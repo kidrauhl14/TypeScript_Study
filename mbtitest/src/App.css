@@ -11,6 +11,16 @@
   font-family: "Jalnan", sans-serif;
 }
 
+
+/* 브라우저 너비가 667px 이하일 때의 스타일 */
+@media (max-width: 665px) {
+  /* 화면을 축소시키는 스타일 */
+  body {
+    background-color: lightblue; /* 배경색 변경 */
+    font-size: 14px; /* 폰트 크기 변경 */
+  }
+}
+
 @font-face {
   font-family: "Jalnan";
   src: url(../public/font/Jalnan.ttf)format("truetype");
