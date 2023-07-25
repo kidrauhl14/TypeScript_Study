@@ -10,7 +10,7 @@ interface Props{
 
 function Header(props:Props) {
   return (
-    <div>
+    <HeaderWrapper>
       {props.type == 'progress' ? (
         // <ProgressWrapper>
           <ProgressBar
@@ -36,19 +36,33 @@ function Header(props:Props) {
           🐱예비집사 판별기🐱
         </div>
       )}
-    </div>
+    </HeaderWrapper>
   );
 }
 
 export default Header;
 
-// 위에 Header함수와 겹쳐서, Header대신 Wrapper라고 칭함
-// const ProgressWrapper = styled.div`
-//   background: #ffa07a;
-//   font-size: 40pt;
-//   align-items: center;
-//   display: flex;
-//   justify-content: center;
-//   font-family: 'Jalnan';
-//   padding: 20px 20px 20px 20px;
-// `;
+const HeaderWrapper = styled.div`
+  @media (max-width: 665px) {
+    /* 텍스트를 화면에 맞게 축소시키는 스타일 */
+
+    & > div {
+      font-size: 30pt;
+    }
+
+    height: 77px;
+  }
+
+  @media (max-width: 360px) {
+    /* 텍스트를 화면에 맞게 축소시키는 스타일 */
+    & > div {
+      font-size: 20pt;
+    }
+  }
+  /* font-size: 40pt;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Jalnan';
+  padding: 20px 20px 20px 20px; */
+`;
